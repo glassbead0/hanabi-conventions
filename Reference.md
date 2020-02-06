@@ -94,27 +94,6 @@ In general, we want all of our strategies to flow from some basic principles. Th
 
 <br />
 
-## Examples
-
-Throughout this document, there will be a mix of both text-based examples and graphical screenshots.
-
-In a text-based example:
-* The player who goes first will always be Alice.
-* The second player will always be Bob.
-* The third player will always be Cathy.
-* The forth player will always be Donald.
-* The fifth player will always be Emily.
-
-(This is a historical convention created by [Keldon Jones](http://keldon.net/) and follows loosely from [cryptography](https://en.wikipedia.org/wiki/Alice_and_Bob).)
-
-A screenshot will look like the following:
-
-![Example Screenshot](img/example.png)
-
-Note that in this user interface, players are **not** holding their hands like they would be if they were playing in real life. Every player's hand is presented in an identical way. The left-most card (slot 1) is the newest card in the hand. The right-most card (slot 4 / chop) is the oldest card in the hand.
-
-<br />
-
 ## Level 1 - Beginner Strategies
 
 * Level 1 strategies can be learned with no games of Hanabi played. You can either learn them before you play your first game or after you play a few games to learn the basic mechanics.
@@ -208,19 +187,6 @@ Note that in this user interface, players are **not** holding their hands like t
 
 * Bob knows that fresh 1's have precedence, so he plays the slot 1 card next. After that, he should play the slot 4 card, and then the slot 3 card (e.g. resuming the play order from before).
 
-### Playing Multiple 1's - The Chop Focus Exception (Part 3)
-
-* As an important exception, to the *Fresh 1's Rule*, *Chop-Focus* **overrides** the *Fresh 1's Rule*.
-* For example, in a 3-player game:
-  * No cards are played on the stacks.
-  * Alice discards a red 4.
-  * Bob discards.
-  * Cathy clues number 1 to Alice, touching four 1's on slots 1, 2, 3, and 5.
-  * Alice knows that the correct order to play all of the 1's in is 5, 1, 3, 2:
-    * Alice knows that normally, you are supposed to play freshly-drawn 1's before 1's that were present in your starting hand. However, *Chop-Focus* overrides this rule, so she knows that the slot 5 card (her chop) should play first.
-    * After that, she uses the *Fresh 1's Rule*, and knows to play the 1 in slot 1 next.
-    * After that, she will play the rest of the 1's from oldest to newest (since they were in her starting hand), so she will play slot 3 and then slot 2.
-
 ### The Prompt + Finesse
 
 * In general, remember that players will always assume *Prompts* over *Finesses*. Thus, is it possible to do a clue that *Prompts* a card from a player's hand **and then** gets them to blind-play their *Finesse Position* card on the next turn.
@@ -277,6 +243,18 @@ Note that in this user interface, players are **not** holding their hands like t
   * Next, Cathy sees that Bob just blind-played a blue 3 immediately after this red clue, so she knows that she must have a one-away from playable red card - the red 4. Cathy holds on to the red 4 for later and discards.
 * Except in rare circumstances, ***Bluffing* is only permissible when you are the person directly before the player who is blind-playing a card**. This is called being in *Bluff Seat*. Do not *Bluff* unless you are in *Bluff Seat*! (This follows from *Good Lie Principle*.)
 
+### Choosing between 2 equal value play clues
+
+* If there are 2 equaly value play clues available to give, for example, you can give a 1-for-1 play clue on a green 2 in Bob's hand on, or a 1-for-1 play clue on a blue 2 in Cathy's hand, there are a few factors to consider when deciding which clue to give.
+* If one of the cards leads into another playbable card that is visible, but not yet clued, you should lean towards cluing that one, although other circuumstances might make you choose otherwise.
+* All other things being equal, if there are 2 equal value 1-for-1 clues to give, you should give the clue on the card that is closer to chop, because that one is in more danger of moving it's way to chop and being discarded. For Example:
+   * Blue 1 and Green 1 are played on the stacks.
+   * Nobody has any clued cards
+   * Bob has Blue 2 on slot 4, Cathy has Green 2 on slot 2
+   * Alice clues blue to Bob, touching his Blue 2 on slot 4 as a play clue. This is better than cluing Cathy Green, since the team has more time to give that clue.
+   
+ * The exception to this rule is when 2 players each have a copy of the same playable card, and you can choose which player to give the clue to. In this case, you shoudl give the clue to the player who's card is *farthest* from chop. This allows the other trash copy of the card to be discarded sooner, rather than filling up someones hand for a long time
+
 ### The Early Game (Intermediate Section)
 
 * The *Early Game* is introduced in the beginner's document. In short:
@@ -286,25 +264,13 @@ Note that in this user interface, players are **not** holding their hands like t
   * Misplaying a card **does not count** as ending the *Early Game*.
   * Discarding known trash **does not count** as ending the *Early Game*.
   * Doing special discards that "transfer" cards to other players **does not count** as ending the *Early Game*.
-* In order to squeeze as much value out of the conventions as possible, we have some extra rules about "extinguishing" every possible clue:
-  * Extinguishing every clue **does** include *5 Stalling*, but it is only mandatory for the team to collectively perform one *5 Stall*. If one *5 Stall* clue has already been given and there is another *5 Stall* clue available, players are allowed (but not required) to clue it.
-  * Extinguishing every clue **does not** include cluing something in the hand of the player who came directly before. This is because the player who came before did not see anything for the next player to do, and is therefore giving them "permission" to discard. In this situation, cluing is optional; players can choose to either clue the previous hand or discard at their discretion.
-  * Extinguishing every clue **does not** include cluing cards that will be almost certainly be *Order Chop Moved* by an upcoming player who already has two or more 1's clued in their hand. (*Order Chop Moves* are an advanced move that is covered later.)
 
 ### 5 Stalls (Intermediate Section)
 
 * As mentioned in the beginner document, *5 Stalls* are when a player clues an off-chop 5 purely because they want (or need) to give a stall clue.
 * *5 Stalls* are usually done in the *Early Game*, but they can also be done in the *Mid-Game* if a player is in a special situation where they are not allowed to discard.
-* *5 Stalls* are only allowed if there is nothing else to do. (If a player does have something else to do, then it is not a *5 Stall* at all, and is either a *5's Chop Move* or a *5 Pull*, which are advanced moves that are covered later.)
-  * However, as an exception, players are also allowed to *5 Stall* if there is **only one** *Play Clue* remaining and it would touch a card on *Finesse Position*. (We refer to this as the *Finesse Position Exception*.)
-  * The *Finesse Position Exception* also applies if the same card is in multiple *Finesse Positions* and there is nothing else to do.
-  * The *Finesse Position Exception* applies for **all** situations in which players are allowed to *5 Stall*.
 * *5 Stalls* **cannot** be given if there are any playable 5's. In this situation, a number 5 clue would just look like a *Play Clue* on the 5.
 * *5 Stalls* **must** be given to the 5 that is closest to chop. For example, in a 3-player game:
-  * It is the *Early Game*. The only thing left for Alice to do is to clue an off-chop 5.
-  * Bob has two playable 1's on slots 1 and 2. He has a 5 on slot 4. Bob's 5 is therefore one-away from chop.
-  * Cathy has nothing clued in her hand. She has a 5 on slot 3. Cathy's 5 is therefore two-away from chop.
-  * Alice must clue number 5 to Bob as a *5 Stall* since his 5 is closer to chop (even though Bob has two playable cards).
 
 ### The Chop Move
 
@@ -423,7 +389,7 @@ Note that in this user interface, players are **not** holding their hands like t
 
 ### The Double Tempo Clue (Re-cluing 2+ Cards to Play)
 
-* Typically, when a *Tempo Clue* is given that touches two or more cards, it means that **all** of the cards touched are playable in order from left to right.
+* Typically, when a *Tempo Clue* is given that touches two or more cards, it means that **all** of the cards touched are playable in focus order.
 * For example, in a 3-player game:
   * It is the first turn and nothing is played on the stacks.
   * Alice clues red to Bob, which touches slot 1, slot 2, and slot 3.
@@ -435,29 +401,6 @@ Note that in this user interface, players are **not** holding their hands like t
   * when the clue got 2+ cards played in total (using cards in someone else's hand)
   * when the clue touched a *Chop Moved* card; in this situation, **only** the *Chop Moved* card is playable
 
-### The Tempo Clue Chop Move
-
-* See the *Chop Move* section above for an explanation on what a *Chop Move* is.
-* In general, *Tempo Clues* do not follow from *Minimum Clue Value Principle*, which states that a clue must get at least 1 new card played or save at least 1 new card from being discarded.
-* Thus, a *Tempo Clue* with no other purpose **must** save at least 1 new card, and the player should *Chop Move* their chop card.
-* For example, in a 3-player game:
-  * It is the first turn and nothing is played on the stacks.
-  * Alice clues red to Bob, which touches two cards on slot 1 and slot 2.
-  * Bob plays red 1 from slot 1. The red card in slot 2 could be red 2, red 3, red 4, or red 5.
-  * Cathy clues number 2 to Bob, which does not introduce any new cards, but it does "fill in" his slot 2 card.
-  * Bob now knows that he has exactly red 2 on slot 2 and that this was a *Tempo Clue*. Since it does not get any new cards and only get tempo on one card in total, he knows that he should also *Chop Move* his slot 5 card.
-* Naturally, *Tempo Clue Chop Moves* **do not** apply in the special situations listed above where natural *Tempo Clues* are allowed.
-* Normally, when two cards are retouched with a clue, it is a *Double Tempo Clue* and the player should play both cards. However, this interpretation does not apply if the second card is strictly not playable. In this situation, all players can see that since only one card is getting tempo, the interpretation of the clue should be a *Tempo Clue Chop Move*.
-* For example, in a 3-player game:
-  * Red 1 is played on the stacks.
-  * Green 4 is in the trash.
-  * Bob has:
-    * a green 4 on slot 3 with no clues on it yet (on chop and critical)
-    * a red 2 on slot 4 with a 2 clue on it
-    * a red 5 on slot 5 with a 5 clue on it
-  * Alice clues red to Bob, which re-touches his slot 4 card and his slot 5 card, "filling" both of them in.
-  * Bob knows that this is a *Tempo Clue*, and plays red 2.
-  * In most cases, since two cards were re-touched, they should both be playable. However, Bob knows that the red 5 is strictly not playable right now. Thus, since the clue did not get any new cards and only got tempo on one card in total, he knows that he should also *Chop Move* his slot 3 card.
 
 ### Double Discard Situations
 
@@ -483,12 +426,6 @@ Note that in this user interface, players are **not** holding their hands like t
 
 While the other sections in this document contain lists of special "moves", this section only contains general principles. We refer to them in post-game reviews and when thinking about the game.
 
-### Trash
-
-* *Trash* cards are defined as cards that have already been played. Thus, they are useless to the team.
-* Players should generally avoid "touching" trash cards with a clue, as doing so would violate *Good Touch Principle*.
-  * Rarely, it can be useful to deliberately clue a trash card and violate *Good Touch Principle* in order to perform a special move. Several such moves are covered later on in this document.
-* In the case where a suit is partially "dead", the unneeded cards are also considered trash. For example, if both copies of the red 3 have been discarded, then the red 4 and the red 5 are both considered trash.
 
 ### Efficiency
 
@@ -560,15 +497,6 @@ While the other sections in this document contain lists of special "moves", this
 * For all of your subsequent turns, you have to treat that card like it is **all of the possibilities** at the same time. This is a lot like the *Schrödinger's Cat* quantum physics analogy, which states a cat is both alive and dead at the same time, and you won't know until you actually open the box and look. Similarly, treat the unknown card as all the possibilities, and you won't actually know until the card is played.
 * The implications of *Schrödinger's Cat Principle* is that players must be very careful - before playing a card, they will often have to wait for everyone else to have a turn to allow for the possibility of a *Prompt*, *Reverse Finesse*, and so forth.
 
-### Clue Interpretation Priority & Occam's Razor
-
-* When a clue could have multiple interpretations, usually *Schrödinger's Cat Principle* is involved - players must wait a round and see what their teammates do in order to find out the true meaning of the clue. But what if a clue could have multiple interpretations and a player does **not** have to wait for information from anyone else?
-* In this situation, players should use *Occam's Razor* - always assume the simplest possible interpretation.
-  * First, assume a direct *Play Clue* or a *Delayed Play Clue*.
-  * If that is impossible, assume a *Prompt*.
-  * If that is impossible, assume a *Finesse*.
-  * If that is impossible, assume a *Bluff*.
-* Similarly, players should also use *Occam's Razor* to tell the difference between the various kinds of *Finesses* and *Bluffs* and special moves - they should always prefer the "move" that gets the least amount of blind-cards played. (A move that only gets a single "blind" card played is simpler than a move that gets two "blind" cards, and so forth.)
 
 ### Team Distribution Principle
 
