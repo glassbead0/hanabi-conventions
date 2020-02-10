@@ -902,3 +902,123 @@ There are a lot of different moves that involve cluing trash. [Here is a handy f
 * When performing a *Layered Finesse* with a *Lie Component*, if the plan is to give a *Fix Clue* to the *Finesse Target* card (the "final" card that is to be blind-played), then it is important to wait until the **last** moment to give the *Fix Clue*. This is because after receiving the *Fix Clue*, the player will not play any more blind cards.
 * Thus, you should first wait for all of the "good" blind cards to play, and **then** give the *Fix Clue* to the *Finesse Target*, so that it comes "just in time" before the misplay.
 * Alternatively, if the plan is to give a *Fix Clue* to some **other** card than the *Finesse Target* (e.g. a number 5 clue to a 5 in the middle of the hand), then the *Fix Clue* does not necessarily have to be just in time. It can be done early, and the player will know that they have to continue blind-playing cards until they find the *Finesse Target*.
+
+
+# Cocoa Rainbow Prompt/Finesse/Bluff conventions (still in development):
+
+
+### Non-CR-prompt
+
+Yellow 1 is played on the stacks
+Bob has a card with a yellow clue on it on slot 4, meaning it is either yellow or CR
+Alice clues Cathy yellow, touching a yellow 3 on slot 2
+Bob has to decide whether this is prompt on his yellow-ish card, or a finesse. Since the clue given touched a NON-CR card, then prompts should take precedence over finesses. Bob should play his slot 4 as yellow 2.
+Cathy plays her slot 2 as yellow 3
+
+### CR-prompt-bluff-with-number
+
+Yellow 1 is played on the stacks
+Bob has a card with a yellow clue on it on slot 4, meaning it is either yellow or CR
+Alice clues Cathy 3, touching a yellow 3 on slot 2
+Bob has to decide whether this is prompt on his yellow-ish card, or a finesse. Since the clue given touched a NON-CR card with a number clue, AND the color of the touched card matches the clue on bob's card, then prompts should take precedence over finesses.
+Bob plays his slot 4 as yellow 2, but is surprised to see that it is a (playable) CR 2.
+Cathy knows that her card is a 3 (and therefore not CR), so she knows that a CR-prompt-bluff-with-number has occurred, and she must have exactly yellow 3.
+
+### CR-prompt-bluff-with-color (illegal)
+
+Yellow 1 is played on the stacks
+Bob has a card with a yellow clue on it on slot 4, meaning it is either yellow or CR
+Alice clues Cathy 3, touching a yellow 3 on slot 2
+Bob has to decide whether this is prompt on his yellow-ish card, or a finesse. Since the clue given touched a NON-CR card with a number clue, AND the color of the touched card matches the clue on bob's card, then prompts should take precedence over finesses.
+Bob plays his slot 4 as yellow 2, but is surprised to see that it is a (playable) CR 2.
+Cathy knows that her card is a 3 (and therefore not CR), so she knows that a CR-prompt-bluff-with-number has occurred, and she must have exactly yellow 3.
+
+### CR-prompt (clue given matches the clue on the card)
+
+CR 1 is played on the stacks
+Bob has a card with a blue clue on it on slot 5, meaning it is either blue or CR
+Alice clues Cathy blue, touching the CR 3 on slot 2
+Bob has to decide whether this is prompt on his blue-ish card, or a finesse. Since the clue given touched a CR card, AND since the clue given (blue), matches the clue on Bob's card (blue), then prompts should take precedence over finesses. Bob should play his slot 5 as CR 2.
+Cathy then plays her slot 2 as CR 3
+
+### CR-Finesse (clue given does not match clue on the card)
+
+CR 1 is played on the stacks
+Bob has a card with a blue clue on it on slot 5, meaning it is either blue or CR
+Alice clues Cathy red, touching the CR 3 on slot 2
+Bob has to decide whether this is prompt on his blue-ish card, or a finesse. Since the clue given touched a CR card, AND since the clue given (red) DOES NOT match the clue on his card (blue), then this is a finesse on Bob. Bob should play his finesse position as CR 2. Bob still does not know whether his slot 5 card is blue or CR yet.
+Since Bob played into a finesse instead of a prompt, Cathy knows that her red-ish card is actually CR, and she can play it as CR 3.
+
+### Direct-CR-bluff (or finesse)
+
+CR 1 is played on the stacks
+Cathy has a card with a blue clue on it on slot 3, meaning it is either blue or CR
+Alice clues cathy red, touching only the slot 3 card, filling it in as confirmed CR
+Bob has no clued cards in his hand, and he blind-plays his finesse position card. It is a playable green 2 (or is playable CR 2)
+Cathy knows that her CR card is CR 3, since the clue caused Bob to blind-play. she can either play it or hold on to it depending on if it was a bluff of a finesse.
+
+
+## When you have multiple CR cards
+
+### CR-reclue (touching multiple CR cards)
+
+Recluing 2 known (or partially known) CR cards (without introducing any new cards) should be interprited in standard focus order as either a play clue, or a finesse/bluff on someone else. this works nicely when you have a playable or one-away CR card in the correct focus position. But what if your two CR cards are not in the right order? In this case, recluding the 2 cards would get them to play in the wrong order, so instead we use a multi-CR-prompt
+
+### Multi-CR-Prompt (prompts the NON-FOCUS card)
+
+CR 1 is played on the stacks
+Bob two known CR cards on slots 4 and 5 (both have been confirmed by multiple color clues)
+Alice clues Cathy blue, touching the CR 3 on slot 2
+This is clearly a CR-propmt, but on which card? If Bob's slot 5 card was the CR 2 (playable), then Alice would have clued him directly with a CR-reclue (since slot 5 would be the focus). BUT Alice did NOT do that, so Bob plays his slot 4 as CR 2
+Cathy then plays her slot 2 as CR 3
+Bob still does not yet know the true identity of his slot 5 card.
+
+
+## Endgame conventions
+
+The endgame arrives when the pace is less than the number of players. eg, for a 3 player game, the endgame starts when the pace becomes 2. During the endgame, trash clues are used to tell somebody to play a particular card in their hand. **For ALL of the following endgame conventions, the slot positions of the cards in a player hand are reversed. So chop becomes slot 1, intake beocmes slot 5. This is knows as end-game-slot-convention.** A common scenario that necessitates these conventions is when a player has 2 knows CR cards in their hand that were saved earlier in the game, but the player does not know what each of the cards are.
+
+### Number-trash-clue (indicating which slot to play)
+
+Then endgame has arrived
+CR 2 is played on the stacks
+every stack is played at least past number 2 (so all 2's are trash)
+Anthony has 2 known CR cards on slots 1 and 2 (farthest right cards)
+Aaron clues Anthony "2" touching a couple of known trash 2s (doesn't matter how many)
+Since the clue was a "number 2" trash clue, Anthony should play his slot 2 card as CR 3
+
+
+### Color-trash-clue (indicating which slot to play)
+
+If you look at the play stacks, the colors are always in the following order: B G Y R P CR. Ignoring the CR stack, the 5 solid colors can be used to indicate a position in someones hand. so Blue (being the furthest left stack), can be used to indicate that someone should play their furthest left cart (slot 5 according to end-game-slot-convention). Thus, the following key can be used (note that slot positions are end-game-slot-convention):
+
+| color | corresponding slot      |
+| ----- | ----------------------- |
+|Blue   | slot 5 (furthest left)  |
+|Green  | slot 4                  |
+|Yellow | slot 3                  |
+|Red    | sloot 2                 |
+|Purple | slot 1 (furthest right) |
+
+##### Example
+
+Then endgame has arrived
+CR 2 is played on the stacks
+the purple stack is complete
+Anthony has 2 known CR cards on slots 1 and 3 (farthest right card and middle card)
+Andrew has a known CR card on slot 4 (and since he sees Anthony's CR cards, he knows that it is CR 5)
+Aaron clues Andrew "purple" touching a couple of known trash purple cards (doesn't matter how many). This clue also touchs a CR card in Andrew's hand as well, but Anthony can see that the CR card is not playable)
+Since the clue was a purple trash clue, Anthony should play his slot 1 card as CR 3.
+Anthony now knows that his other CR card is CR 4, and can play that on his next turn.
+
+Note that either a number or color trash clue (in the endgame) can be given to either the target of the clue, or the other play, and each player has to figure out if they are the target or not (by looking at the other's hand). Be aware that a color-trash-clue that is given to the target of the clue MUST be distinguished from a **CR-reclue**. In other words, A CR-recule will ONLY touch the 2 known CR cards, and thus focus-order shoudl apply. But a color-trash-clue must touch the 2 known CR cards AND an additional known trash card, in which case the receiver of the clue should use the color-slot key above to determine which card to play.
+
+##### Example (Color-trash-clue where the receiver of the clue is also the target of the clue)
+
+Then endgame has arrived
+CR 3 is played on the stacks
+the red stack is complete
+Anthony has 2 known CR cards on slots 1 and 2
+Aaron clues "red" to anthony, re-touching slots 1 and 2, and also touching a new red-ish card on slot 5.
+Since Anthony knows that his slots 1 and 2 are the only remaining CR cards in the game, and since the red stack is complete, Anthony knows that the new red card is trash, and thus this is a color-trash-clue.
+Antyony knows that red = slot 2 from the table above, so he plays slot 2 as CR 4
